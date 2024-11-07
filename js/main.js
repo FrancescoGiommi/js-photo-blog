@@ -24,17 +24,16 @@ fetch("https://jsonplaceholder.typicode.com/photos?_limit=6")
   .then((posts) => {
     console.log(posts);
     posts.forEach((post) => {
-      cardPost = `
-        <div class="col-2">
-            <div class="card" style="width: 15rem">
+      postsCardEl.innerHTML += `
+        <div class="col-4 ">
+            <div class="card">
               <img class="m-3" src="${post.url}" alt="" />
               <div class="card-body">
-                <p class="card-text">
+                <span class="card-text">
                   ${post.title}
-                </p>
+                </span>
               </div>
             </div>
     `;
     });
-    postsCardEl.innerHTML = cardPost;
   });
