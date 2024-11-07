@@ -16,8 +16,25 @@ Bonus
 rendi la pagina responsive, in modo che su mobile e tablet le foto si dispongano man mano una sotto l’altra 
 ed il titolo abbia una dimensione adeguata */
 
+const postsCardEl = document.getElementById("posts-card");
 let cardPost;
 
-fetch("https://jsonplaceholder.typicode.com/photos?_limit=3")
+fetch("https://jsonplaceholder.typicode.com/photos?_limit=6")
   .then((response) => response.json())
-  .then((post) => {});
+  .then((posts) => {
+    console.log(posts);
+    posts.forEach((post) => {
+      cardPost = `
+        <div class="col-2">
+            <div class="card" style="width: 15rem">
+              <img class="m-3" src="${post.url}" alt="" />
+              <div class="card-body">
+                <p class="card-text">
+                  ${post.title}
+                </p>
+              </div>
+            </div>
+    `;
+    });
+    postsCardEl.innerHTML = cardPost;
+  });
