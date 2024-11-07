@@ -1,7 +1,15 @@
+.edu-tas-beginner {
+  font-family: "Edu TAS Beginner", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .header-content {
   background-image: url(../img/wall.png);
 }
 
 .bg-image {
   background-image: url(../img/cork.png);
+  height: 100vh;
 }
