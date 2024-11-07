@@ -15,3 +15,9 @@ sfruttando la risposta per generare dinamicamente in pagina una serie di foto!
 Bonus
 rendi la pagina responsive, in modo che su mobile e tablet le foto si dispongano man mano una sotto l’altra 
 ed il titolo abbia una dimensione adeguata */
+
+let cardPost;
+
+fetch("https://jsonplaceholder.typicode.com/photos?_limit=3")
+  .then((response) => response.json())
+  .then((post) => {});
