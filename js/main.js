@@ -66,4 +66,12 @@ fetch("https://jsonplaceholder.typicode.com/photos?_limit=6")
             </div>
     `;
     });
+    const cards = document.querySelectorAll("#posts-card .card");
+    console.log(cards);
+
+    cards.forEach((card) => {
+      card.addEventListener("click", function () {
+        overlayEl.classList.remove("d-none");
+      });
+    });
   });
