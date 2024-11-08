@@ -45,6 +45,7 @@ const postsCardEl = document.getElementById("posts-card");
 const overlayEl = document.getElementById("overlay");
 const overlayImageEl = document.getElementById("overlay-image");
 const btnCloseEl = document.getElementById("btn-close");
+const imgEl = document.querySelectorAll("img");
 let cardPost;
 
 /* genero l'immagine richiamndo l'API con fetch */
@@ -66,12 +67,18 @@ fetch("https://jsonplaceholder.typicode.com/photos?_limit=6")
             </div>
     `;
     });
+
+    /* genero i nodi di ogni card */
     const cards = document.querySelectorAll("#posts-card .card");
     console.log(cards);
 
+    /* aggiungo l'overlay ad ogni card */
     cards.forEach((card) => {
       card.addEventListener("click", function () {
         overlayEl.classList.remove("d-none");
+        overlayImageEl.innerHTML += `
+        <img class="m-3" src="${card.url}" alt="" />
+        `;
       });
 
       btnCloseEl.addEventListener("click", function () {
