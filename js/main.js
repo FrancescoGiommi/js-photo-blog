@@ -73,5 +73,9 @@ fetch("https://jsonplaceholder.typicode.com/photos?_limit=6")
       card.addEventListener("click", function () {
         overlayEl.classList.remove("d-none");
       });
+
+      btnCloseEl.addEventListener("click", function () {
+        overlayEl.classList.add("d-none");
+      });
     });
   });
